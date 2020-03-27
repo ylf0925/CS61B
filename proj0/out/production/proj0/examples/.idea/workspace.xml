@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7afe6efd-7ebb-499c-ac6a-f064417b8cc7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZeadiJuWad8meYEpT7h6hYwaI5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CS61B/skeleton/skeleton-sp19/proj0" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7afe6efd-7ebb-499c-ac6a-f064417b8cc7" name="Default Changelist" comment="" />
+      <created>1585202102682</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585202102682</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="74" y="182" key="#Updates" timestamp="1585216038851">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="74" y="182" key="#Updates/0.0.1920.1040@0.0.1920.1040" timestamp="1585216038851" />
+    <state x="606" y="425" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585226128505">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="606" y="425" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585226128505" />
+    <state x="300" y="292" key="FileChooserDialogImpl" timestamp="1585228194428">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="300" y="292" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585228194428" />
+    <state x="335" y="165" width="1036" height="820" key="SettingsEditor" timestamp="1585226133476">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="335" y="165" width="1036" height="820" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585226133476" />
+  </component>
+</project>
