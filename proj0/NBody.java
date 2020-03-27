@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-
 public class NBody {
     public static double readRadius(String R) {
         In in = new In(R);
@@ -7,7 +5,7 @@ public class NBody {
         return in.readDouble();
     }
 
-    public static Planet[] readBodies(String R) {
+    public static Planet[] readPlanets(String R) {
         In in = new In(R);
         int numberOfPlanet = in.readInt();
         double radius = in.readDouble();
@@ -23,7 +21,7 @@ public class NBody {
         double dt = Double.parseDouble(args[1]);
         String filename = args[2];
         double radius = NBody.readRadius(filename);
-        Planet[] planets = NBody.readBodies(filename);
+        Planet[] planets = NBody.readPlanets(filename);
         StdDraw.setScale(-radius, radius);
         StdDraw.enableDoubleBuffering();
         double Tau = 0;
