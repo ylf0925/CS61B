@@ -9,7 +9,6 @@ public class Body {
     public double mass;
     public String imgFileName;
 
-
     public Body(double xP, double yP, double xV, double yV,
                 double m, String img) {
         xxPos = xP;
@@ -19,7 +18,6 @@ public class Body {
         mass = m;
         imgFileName = img;
     }
-
 
     public Body(Body b) {
         this.xxPos = b.xxPos;
@@ -36,7 +34,6 @@ public class Body {
         return Math.hypot(dx, dy);
 
     }
-
 
     public double calcForceExertedBy(Body b) {
         final double G = 6.67e-11;

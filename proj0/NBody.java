@@ -22,24 +22,24 @@ public class NBody {
         double T = Double.parseDouble(args[0]);
         double dt = Double.parseDouble(args[1]);
         String filename = args[2];
-        double universeRadius = NBody.readRadius(filename);
-        Body[] bodyAry = NBody.readBodies(filename);
-        StdDraw.setScale(-universeRadius, universeRadius);
+        double radius = NBody.readRadius(filename);
+        Body[] bodies = NBody.readBodies(filename);
+        StdDraw.setScale(-radius, radius);
         StdDraw.enableDoubleBuffering();
         double Tau = 0;
         while (Tau <= T) {
-            double[] xForces = new double[bodyAry.length];
-            double[] yForces = new double[bodyAry.length];
-            for (int j = 0; j < bodyAry.length; j++) {
-                xForces[j] = bodyAry[j].calcNetForceExertedByX(bodyAry);
-                yForces[j] = bodyAry[j].calcNetForceExertedByY(bodyAry);
+            double[] xForces = new double[bodies.length];
+            double[] yForces = new double[bodies.length];
+            for (int j = 0; j < bodies.length; j++) {
+                xForces[j] = bodies[j].calcNetForceExertedByX(bodies);
+                yForces[j] = bodies[j].calcNetForceExertedByY(bodies);
             }
-            for (int i = 0; i < bodyAry.length; i++) {
-                bodyAry[i].update(dt, xForces[i], yForces[i]);
+            for (int i = 0; i < bodies.length; i++) {
+                bodies[i].update(dt, xForces[i], yForces[i]);
             }
 
             StdDraw.picture(0, 0, "images/starfield.jpg");
-            for (Body body : bodyAry) {
+            for (Body body : bodies) {
                 body.draw();
             }
             StdDraw.show();
@@ -47,12 +47,12 @@ public class NBody {
             Tau = Tau + dt;
         }
 
-        StdOut.printf("%d\n", bodyAry.length);
-        StdOut.printf("%.2e\n", universeRadius);
-        for (int i = 0; i < bodyAry.length; i++) {
+        StdOut.printf("%d\n", bodies.length);
+        StdOut.printf("%.2e\n", radius);
+        for (int i = 0; i < bodies.length; i++) {
             StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
-                    bodyAry[i].xxPos, bodyAry[i].yyPos, bodyAry[i].xxVel,
-                    bodyAry[i].yyVel, bodyAry[i].mass, bodyAry[i].imgFileName);
+                    bodies[i].xxPos, bodies[i].yyPos, bodies[i].xxVel,
+                    bodies[i].yyVel, bodies[i].mass, bodies[i].imgFileName);
         }
     }
 }
