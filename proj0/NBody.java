@@ -19,15 +19,9 @@ public class NBody {
     }
 
     public static void main(String[] args) {
-
-       /* double T = Double.parseDouble(args[0]);
+        double T = Double.parseDouble(args[0]);
         double dt = Double.parseDouble(args[1]);
-        String filename = args[2];*/
-
-        double T = Double.parseDouble("157788000.0");
-        double dt = Double.parseDouble("25000.0");
-        String filename = "data/planets.txt";
-
+        String filename = args[2];
         double universeRadius = NBody.readRadius(filename);
         Body[] bodyAry = NBody.readBodies(filename);
         StdDraw.setScale(-universeRadius, universeRadius);
