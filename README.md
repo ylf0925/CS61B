@@ -1,2 +1,2 @@
 # CS61B-HW
-Homework and Project for CS61B Data Structures
+Homeworks and Projects for CS61B Data Structures
