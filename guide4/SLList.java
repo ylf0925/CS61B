@@ -11,7 +11,6 @@ public class SLList {
         IntNode(int i, IntNode n) {
             item = i;
             next = n;
-            //System.out.println(size);
         }
     }
 
@@ -75,7 +74,7 @@ public class SLList {
     }
 
     /**
-     * guide4 C1
+     * guide4 A1
      */
     public void addAdjacent() {
         IntNode curr = sentinel.next;
@@ -91,7 +90,7 @@ public class SLList {
     }
 
     /**
-     * guide4 C2
+     * guide4 A2
      */
     public void addSquare(IntNode tail) {
         IntNode curr = sentinel.next;
