@@ -31,25 +31,27 @@ public class LinkedListDeque<T> {
     /**
      * Adds an item of type T to the front of the deque.
      */
-    public void addFisrt(TNode node) {
+
+    public void addFirst(T it) {
+        TNode freshTNode = new TNode(null,it,null);
         TNode p = sentinel.next;
-        sentinel.next = node;
-        node.prev = sentinel;
-        node.next = p;
-        p.prev = node;
+        sentinel.next = freshTNode;
+        freshTNode.prev = sentinel;
+        freshTNode.next = p;
+        p.prev = freshTNode;
         length += 1;
     }
-
 
     /**
      * Adds an item of type T to the back of the deque.
      */
-    public void addLast(TNode node) {
+    public void addLast(T it) {
+        TNode freshTNode = new TNode(null,it,null);
         TNode p = sentinel.prev;
-        sentinel.prev = node;
-        node.next = sentinel;
-        node.prev = p;
-        p.next = node;
+        sentinel.prev = freshTNode;
+        freshTNode.next = sentinel;
+        freshTNode.prev = p;
+        p.next = freshTNode;
         length += 1;
     }
 
@@ -72,8 +74,10 @@ public class LinkedListDeque<T> {
      * Once all the items have been printed, print out a new line.
      * */
     public void printDeque() {
-        while (sentinel.next != sentinel) {
-            System.out.print(sentinel.next);
+        TNode curr = sentinel.next;
+        while (curr != sentinel) {
+            System.out.print(curr.item + " ");
+            curr = curr.next;
         }
         System.out.println(" ");
     }
