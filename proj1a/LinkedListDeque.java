@@ -28,6 +28,30 @@ public class LinkedListDeque<T> {
         length = 0;
     }
 
+
+    /**
+     * Create a deep copy of other
+     */
+    public LinkedListDeque(LinkedListDeque other) {
+        this.sentinel = new TNode(null, null, null);
+        this.sentinel.next = sentinel;
+        this.sentinel.prev = sentinel;
+        this.length = 0;
+
+        TNode p = other.sentinel.next;
+        TNode slow = this.sentinel;
+        while (p != other.sentinel) {
+            TNode freshTNode = new TNode(null, p.item, null);
+            freshTNode.prev = slow;
+            slow.next = freshTNode  ;
+            slow = slow.next;
+            p = p.next;
+        }
+        this.length = other.length;
+        slow.next = this.sentinel ;
+        slow = this.sentinel.prev ;
+    }
+
     /**
      * Adds an item of type T to the front of the deque.
      */
@@ -59,7 +83,8 @@ public class LinkedListDeque<T> {
      * To determine the deque is empty or not.
      */
     public boolean isEmpty() {
-        return ((sentinel.next == sentinel) && (sentinel.prev == sentinel));
+        return ((sentinel.next == sentinel) &&
+                (sentinel.prev == sentinel));
     }
 
     /**
@@ -123,7 +148,8 @@ public class LinkedListDeque<T> {
      * Get the item at given index
      */
     public T get(int index) {
-        if ((sentinel.next == sentinel) && (sentinel.prev == sentinel)) {
+        if ((sentinel.next == sentinel) &&
+            (sentinel.prev == sentinel)) {
             return null;
         }
         //searching
@@ -140,7 +166,27 @@ public class LinkedListDeque<T> {
         return forwardIdx == index ? forwardPivot.item : backwardPivot.item;
     }
 
-    public LinkedListDeque(LinkedListDeque other) {
+    /**
+     * Get the item at given index recursively
+     */
+    public T getRecursive(int index) {
+        if ((sentinel.next == sentinel) &&
+            (sentinel.prev == sentinel)) {
+            return null;
+        }
+        /*
+         * exclude empty input, then searching recursively.
+         * */
+        TNode recursivePivot = sentinel.next;
+        return recursiveHelper(index, 0, recursivePivot);
+    }
 
+    private T recursiveHelper(int idx, int currIdx, TNode curr) {
+        if (currIdx == idx) {
+            return curr.item;
+        }
+        curr = curr.next;
+        currIdx++;
+        return recursiveHelper(idx, currIdx, curr);
     }
 }
