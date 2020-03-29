@@ -31,31 +31,48 @@ public class LinkedListDeque<T> {
 
     /**
      * Create a deep copy of other
+     *
+     * @author YLF
      */
     public LinkedListDeque(LinkedListDeque other) {
+        sentinel = new TNode(null, null, null);
+        sentinel.next = sentinel;
+        sentinel.prev = sentinel;
+        length = 0;
+
+        TNode p = other.sentinel.next;
+        TNode slow = sentinel;
+        while (p != other.sentinel) {
+            TNode freshTNode = new TNode(null, p.item, null);
+            freshTNode.prev = slow;
+            slow.next = freshTNode;
+            slow = slow.next;
+            p = p.next;
+        }
+        length = other.length;
+        slow.next = sentinel;
+        slow = sentinel.prev;
+    }
+
+    /**
+     * Create a deep copy of other
+     * @Source youtube
+     */
+    /*public LinkedListDeque(LinkedListDeque other) {
         this.sentinel = new TNode(null, null, null);
         this.sentinel.next = sentinel;
         this.sentinel.prev = sentinel;
         this.length = 0;
 
-        TNode p = other.sentinel.next;
-        TNode slow = this.sentinel;
-        while (p != other.sentinel) {
-            TNode freshTNode = new TNode(null, p.item, null);
-            freshTNode.prev = slow;
-            slow.next = freshTNode  ;
-            slow = slow.next;
-            p = p.next;
+        for (int i = 0; i < other.size(); i++){
+            addLast((T) other.get(i));
         }
-        this.length = other.length;
-        slow.next = this.sentinel ;
-        slow = this.sentinel.prev ;
-    }
+    }*/
+
 
     /**
      * Adds an item of type T to the front of the deque.
      */
-
     public void addFirst(T it) {
         TNode freshTNode = new TNode(null, it, null);
         TNode p = sentinel.next;
@@ -119,6 +136,9 @@ public class LinkedListDeque<T> {
             p.next = null;
             p.prev = null;
             length -= 1;
+            if (length < 0) {
+                length = 0;
+            }
             return p.item;
         } else {
             return null;
@@ -138,6 +158,9 @@ public class LinkedListDeque<T> {
             p.prev = null;
             p.next = null;
             length -= 1;
+            if (length < 0) {
+                length = 0;
+            }
             return p.item;
         } else {
             return null;
@@ -149,7 +172,7 @@ public class LinkedListDeque<T> {
      */
     public T get(int index) {
         if ((sentinel.next == sentinel) &&
-            (sentinel.prev == sentinel)) {
+                (sentinel.prev == sentinel)) {
             return null;
         }
         //searching
@@ -171,7 +194,7 @@ public class LinkedListDeque<T> {
      */
     public T getRecursive(int index) {
         if ((sentinel.next == sentinel) &&
-            (sentinel.prev == sentinel)) {
+                (sentinel.prev == sentinel)) {
             return null;
         }
         /*
