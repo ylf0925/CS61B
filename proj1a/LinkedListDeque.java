@@ -30,11 +30,11 @@ public class LinkedListDeque<T> {
 
 
     /**
-     * Create a deep copy of other
      *
+     * reate a deep copy of other
      * @author YLF
      */
-    public LinkedListDeque(LinkedListDeque other) {
+    /*public LinkedListDeque(LinkedListDeque other) {
         sentinel = new TNode(null, null, null);
         sentinel.next = sentinel;
         sentinel.prev = sentinel;
@@ -52,13 +52,14 @@ public class LinkedListDeque<T> {
         length = other.length;
         slow.next = sentinel;
         slow = sentinel.prev;
-    }
+    }*/
+
 
     /**
      * Create a deep copy of other
      * @Source youtube
      */
-    /*public LinkedListDeque(LinkedListDeque other) {
+    public LinkedListDeque(LinkedListDeque other) {
         this.sentinel = new TNode(null, null, null);
         this.sentinel.next = sentinel;
         this.sentinel.prev = sentinel;
@@ -67,8 +68,7 @@ public class LinkedListDeque<T> {
         for (int i = 0; i < other.size(); i++){
             addLast((T) other.get(i));
         }
-    }*/
-
+    }
 
     /**
      * Adds an item of type T to the front of the deque.
@@ -100,8 +100,8 @@ public class LinkedListDeque<T> {
      * To determine the deque is empty or not.
      */
     public boolean isEmpty() {
-        return ((sentinel.next == sentinel) &&
-                (sentinel.prev == sentinel));
+        return ((sentinel.next == sentinel)
+                && (sentinel.prev == sentinel));
     }
 
     /**
@@ -129,16 +129,13 @@ public class LinkedListDeque<T> {
      * If no such item exists, returns null.
      */
     public T removeFirst() {
-        if (sentinel.next != null) {
+        if (sentinel.next != sentinel) {
             TNode p = sentinel.next;
             sentinel.next = p.next;
             p.next.prev = sentinel;
             p.next = null;
             p.prev = null;
             length -= 1;
-            if (length < 0) {
-                length = 0;
-            }
             return p.item;
         } else {
             return null;
@@ -151,16 +148,13 @@ public class LinkedListDeque<T> {
      * If no such item exists, returns null.
      * */
     public T removeLast() {
-        if (sentinel.prev != null) {
+        if (sentinel.prev != sentinel) {
             TNode p = sentinel.prev;
             sentinel.prev = p.prev;
             p.prev.next = sentinel;
             p.prev = null;
             p.next = null;
             length -= 1;
-            if (length < 0) {
-                length = 0;
-            }
             return p.item;
         } else {
             return null;
@@ -171,8 +165,8 @@ public class LinkedListDeque<T> {
      * Get the item at given index
      */
     public T get(int index) {
-        if ((sentinel.next == sentinel) &&
-                (sentinel.prev == sentinel)) {
+        if ((sentinel.next == sentinel)
+            && (sentinel.prev == sentinel)) {
             return null;
         }
         //searching
@@ -193,8 +187,8 @@ public class LinkedListDeque<T> {
      * Get the item at given index recursively
      */
     public T getRecursive(int index) {
-        if ((sentinel.next == sentinel) &&
-                (sentinel.prev == sentinel)) {
+        if ((sentinel.next == sentinel)
+            && (sentinel.prev == sentinel)) {
             return null;
         }
         /*
