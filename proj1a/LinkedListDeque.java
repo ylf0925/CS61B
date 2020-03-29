@@ -34,7 +34,7 @@ public class LinkedListDeque<T> {
      *
      * @author YLF
      */
-    public LinkedListDeque(LinkedListDeque other) {
+    public LinkedListDeque(LinkedListDeque<T> other) {
         sentinel = new TNode(null, null, null);
         sentinel.next = sentinel;
         sentinel.prev = sentinel;
@@ -170,7 +170,7 @@ public class LinkedListDeque<T> {
             return null;
         }
         int forwardIdx = 0;
-        int backwardIdx = length;
+        int backwardIdx = length - 1;
         TNode forwardPivot = sentinel.next;
         TNode backwardPivot = sentinel.prev;
         while ((forwardIdx != index) && (backwardIdx != index)) {
