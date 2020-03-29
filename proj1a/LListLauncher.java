@@ -33,9 +33,9 @@ public class LListLauncher {
         L.removeLast();
         length = L.size();
         L.get(3);
-        int item1 = L.getRecursive(3);
-        /*LinkedListDeque<Integer> K = new LinkedListDeque<>(L);
-        System.out.println(K);*/
+        L.getRecursive(3);
+        LinkedListDeque<Integer> K = new LinkedListDeque<>(L);
+        System.out.println(K);
 
     }
 }

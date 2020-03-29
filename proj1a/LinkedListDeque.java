@@ -30,11 +30,11 @@ public class LinkedListDeque<T> {
 
 
     /**
+     * create a deep copy of other
      *
-     * reate a deep copy of other
      * @author YLF
      */
-    /*public LinkedListDeque(LinkedListDeque other) {
+    public LinkedListDeque(LinkedListDeque other) {
         sentinel = new TNode(null, null, null);
         sentinel.next = sentinel;
         sentinel.prev = sentinel;
@@ -52,23 +52,22 @@ public class LinkedListDeque<T> {
         length = other.length;
         slow.next = sentinel;
         slow = sentinel.prev;
-    }*/
-
+    }
 
     /**
      * Create a deep copy of other
      * @Source youtube
      */
-    public LinkedListDeque(LinkedListDeque other) {
+   /* public LinkedListDeque(LinkedListDeque other) {
         this.sentinel = new TNode(null, null, null);
         this.sentinel.next = sentinel;
         this.sentinel.prev = sentinel;
         this.length = 0;
 
-        for (int i = 0; i < other.size(); i++){
+        for (int i = 0; i < other.size(); i++) {
             addLast((T) other.get(i));
         }
-    }
+    }*/
 
     /**
      * Adds an item of type T to the front of the deque.
@@ -142,7 +141,6 @@ public class LinkedListDeque<T> {
         }
     }
 
-
     /*
      * Removes and returns the item at the back of the deque.
      * If no such item exists, returns null.
@@ -165,11 +163,12 @@ public class LinkedListDeque<T> {
      * Get the item at given index
      */
     public T get(int index) {
-        if ((sentinel.next == sentinel)
-            && (sentinel.prev == sentinel)) {
+        if (this.isEmpty()) {
             return null;
         }
-        //searching
+        if (index > this.size()) {
+            return null;
+        }
         int forwardIdx = 0;
         int backwardIdx = length;
         TNode forwardPivot = sentinel.next;
@@ -187,10 +186,13 @@ public class LinkedListDeque<T> {
      * Get the item at given index recursively
      */
     public T getRecursive(int index) {
-        if ((sentinel.next == sentinel)
-            && (sentinel.prev == sentinel)) {
+        if (this.isEmpty()) {
             return null;
         }
+        if (index > this.size()) {
+            return null;
+        }
+
         /*
          * exclude empty input, then searching recursively.
          * */
