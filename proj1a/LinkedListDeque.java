@@ -33,7 +33,7 @@ public class LinkedListDeque<T> {
      */
 
     public void addFirst(T it) {
-        TNode freshTNode = new TNode(null,it,null);
+        TNode freshTNode = new TNode(null, it, null);
         TNode p = sentinel.next;
         sentinel.next = freshTNode;
         freshTNode.prev = sentinel;
@@ -46,7 +46,7 @@ public class LinkedListDeque<T> {
      * Adds an item of type T to the back of the deque.
      */
     public void addLast(T it) {
-        TNode freshTNode = new TNode(null,it,null);
+        TNode freshTNode = new TNode(null, it, null);
         TNode p = sentinel.prev;
         sentinel.prev = freshTNode;
         freshTNode.next = sentinel;
@@ -138,5 +138,9 @@ public class LinkedListDeque<T> {
             backwardIdx--;
         }
         return forwardIdx == index ? forwardPivot.item : backwardPivot.item;
+    }
+
+    public LinkedListDeque(LinkedListDeque other) {
+
     }
 }
