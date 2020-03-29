@@ -109,7 +109,7 @@ public class LinkedListDeque<T> {
         if (sentinel.prev != null) {
             TNode p = sentinel.prev;
             sentinel.prev = p.prev;
-            p.prev.prev = sentinel;
+            p.prev.next = sentinel;
             p.prev = null;
             p.next = null;
             length -= 1;
@@ -128,7 +128,7 @@ public class LinkedListDeque<T> {
         }
         //searching
         int forwardIdx = 0;
-        int backwardIdx = length - 1;
+        int backwardIdx = length;
         TNode forwardPivot = sentinel.next;
         TNode backwardPivot = sentinel.prev;
         while ((forwardIdx != index) && (backwardIdx != index)) {
