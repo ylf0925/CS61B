@@ -18,7 +18,7 @@ public class Cat {
     public static void calm() {
         noise = noise.toLowerCase();
     }
-    
+
     public static void main(String[] args) {
         Cat a = new Cat("Cream", "Meow!");
         Cat b = new Cat("Tubbs", "Nyan!");
