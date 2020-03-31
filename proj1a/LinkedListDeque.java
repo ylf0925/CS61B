@@ -31,10 +31,9 @@ public class LinkedListDeque<T> {
 
     /**
      * create a deep copy of other
-     *
      * @author YLF
      */
-    public LinkedListDeque(LinkedListDeque<T> other) {
+ /*   public LinkedListDeque(LinkedListDeque<T> other) {
         sentinel = new TNode(null, null, null);
         sentinel.next = sentinel;
         sentinel.prev = sentinel;
@@ -52,22 +51,23 @@ public class LinkedListDeque<T> {
         length = other.length;
         slow.next = sentinel;
         slow = sentinel.prev;
-    }
+    }*/
 
     /**
      * Create a deep copy of other
+     *
      * @Source youtube
      */
-   /* public LinkedListDeque(LinkedListDeque other) {
+    public LinkedListDeque(LinkedListDeque other) {
         this.sentinel = new TNode(null, null, null);
         this.sentinel.next = sentinel;
         this.sentinel.prev = sentinel;
         this.length = 0;
 
-        for (int i = 0; i < other.size(); i++) {
+        for (int i = 0; i < other.size(); i += 1) {
             addLast((T) other.get(i));
         }
-    }*/
+    }
 
     /**
      * Adds an item of type T to the front of the deque.

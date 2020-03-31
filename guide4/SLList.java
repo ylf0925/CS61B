@@ -1,4 +1,3 @@
-
 /**
  * An SLList is a list of integers, which hides the terrible truth
  * of the nakedness within.
@@ -97,17 +96,18 @@ public class SLList {
         IntNode p = curr.next;
         while (curr != null) {
             if (p != null) {
-                curr.next = new IntNode(curr.item * curr.item,p);
+                curr.next = new IntNode(curr.item * curr.item, p);
                 curr = p;
                 p = p.next;
                 size += 1;
             } else {
-                curr.next = new IntNode(curr.item * curr.item,tail);
+                curr.next = new IntNode(curr.item * curr.item, tail);
                 size += 2;
                 break;
             }
         }
     }
+
     /**
      * Returns the first item in the list.
      */
@@ -120,14 +120,11 @@ public class SLList {
      */
     public void addLast(int x) {
         size = size + 1;
-
         IntNode p = sentinel;
-
         /* Advance p to the end of the list. */
         while (p.next != null) {
             p = p.next;
         }
-
         p.next = new IntNode(x, null);
     }
 
@@ -149,7 +146,7 @@ public class SLList {
         int[] a = new int[]{1, 1, 2, 2, 4, 4, 8, 6, 4, 7};
         L = new SLList(a);
         L.addAdjacent();
-        IntNode node = new IntNode(2077,null);
+        IntNode node = new IntNode(2077, null);
         L.addSquare(node);
         System.out.println(L.size());
     }
