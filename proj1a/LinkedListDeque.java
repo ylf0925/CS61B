@@ -1,5 +1,8 @@
 public class LinkedListDeque<T> {
 
+    private TNode sentinel;
+    private int length;
+
     /**
      * Sort of "Naked data structure"
      */
@@ -15,8 +18,6 @@ public class LinkedListDeque<T> {
         }
     }
 
-    private TNode sentinel;
-    private int length;
 
     /**
      * Start from a circular sentinel TNode, both prev and next point to itself.
@@ -29,16 +30,16 @@ public class LinkedListDeque<T> {
     }
 
 
+
     /**
      * create a deep copy of other
      * @author YLF
      */
- /*   public LinkedListDeque(LinkedListDeque<T> other) {
+    /*public LinkedListDeque(LinkedListDeque<T> other) {
         sentinel = new TNode(null, null, null);
         sentinel.next = sentinel;
         sentinel.prev = sentinel;
         length = 0;
-
         TNode p = other.sentinel.next;
         TNode slow = sentinel;
         while (p != other.sentinel) {
@@ -53,9 +54,10 @@ public class LinkedListDeque<T> {
         slow = sentinel.prev;
     }*/
 
+
+
     /**
      * Create a deep copy of other
-     *
      * @Source youtube
      */
     public LinkedListDeque(LinkedListDeque other) {
@@ -110,7 +112,7 @@ public class LinkedListDeque<T> {
         return length;
     }
 
-    /*
+    /**
      * print the items in the deque from first to last, separated by a space.
      * Once all the items have been printed, print out a new line.
      * */
@@ -141,7 +143,7 @@ public class LinkedListDeque<T> {
         }
     }
 
-    /*
+    /**
      * Removes and returns the item at the back of the deque.
      * If no such item exists, returns null.
      * */
@@ -193,9 +195,7 @@ public class LinkedListDeque<T> {
             return null;
         }
 
-        /*
-         * exclude empty input, then searching recursively.
-         * */
+        //exclude empty input, then searching recursively.
         TNode recursivePivot = sentinel.next;
         return recursiveHelper(index, 0, recursivePivot);
     }
