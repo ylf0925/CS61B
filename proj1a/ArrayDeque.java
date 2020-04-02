@@ -133,9 +133,8 @@ public class ArrayDeque<T> {
         int pos = nextFstIdx;
         pos++;
         //pos = checkCurrIdx(pos, this.items.length);
-        return items[pos + index - 1];
+        return items[pos + index];
     }
-
 
     /**
      * function
@@ -150,7 +149,6 @@ public class ArrayDeque<T> {
         }
         return Idx;
     }*/
-
 
     /**
      * instance method

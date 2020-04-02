@@ -26,6 +26,24 @@ public class ArrayDequeTest {
         isEmp = L.isEmpty();
         length = L.size();
         L.printDeque();
+        curr = L.removeFirst();
+        curr = L.removeLast();
+        curr = L.removeFirst();
+        curr = L.removeFirst();
+        curr = L.removeLast();
+        curr = L.removeFirst();
+        curr = L.removeFirst();
+        curr = L.removeLast();
+        curr = L.removeFirst();
+        curr = L.removeFirst();
+        curr = L.removeLast();
+        curr = L.removeFirst();
+        curr = L.removeFirst();
+        curr = L.removeLast();
+        curr = L.removeFirst();
+       curr = L.removeLast();
+        curr = L.removeFirst();
+
         curr = L.removeLast();
         curr = L.removeLast();
         curr = L.removeLast();
@@ -71,5 +89,6 @@ public class ArrayDequeTest {
         L.addFirst("2007");
         L.addFirst("2006");
         L.addFirst("2005");
+        curr = L.get(4);
     }
 }
