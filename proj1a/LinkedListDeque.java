@@ -30,7 +30,6 @@ public class LinkedListDeque<T> {
     }
 
 
-
     /**
      * create a deep copy of other
      * @author YLF
@@ -55,9 +54,9 @@ public class LinkedListDeque<T> {
     }*/
 
 
-
     /**
      * Create a deep copy of other
+     *
      * @Source youtube
      */
     public LinkedListDeque(LinkedListDeque other) {
@@ -115,7 +114,7 @@ public class LinkedListDeque<T> {
     /**
      * print the items in the deque from first to last, separated by a space.
      * Once all the items have been printed, print out a new line.
-     * */
+     */
     public void printDeque() {
         TNode curr = sentinel.next;
         while (curr != sentinel) {
@@ -146,7 +145,7 @@ public class LinkedListDeque<T> {
     /**
      * Removes and returns the item at the back of the deque.
      * If no such item exists, returns null.
-     * */
+     */
     public T removeLast() {
         if (sentinel.prev != sentinel) {
             TNode p = sentinel.prev;
