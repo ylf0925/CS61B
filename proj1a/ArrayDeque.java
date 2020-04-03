@@ -200,10 +200,10 @@ public class ArrayDeque<T> {
             while (loopcount < this.size) {
                 rawAryCopy[leftMovingIdx] = items[prevleftMovingIdx];
                 rawAryCopy[rightMovingIdx] = items[prevrightMovingIdx];
-                leftMovingIdx--;
                 if (prevleftMovingIdx == 0 || prevrightMovingIdx == items.length - 1) {
                     break;
                 }
+                leftMovingIdx--;
                 prevleftMovingIdx--;
                 rightMovingIdx++;
                 prevrightMovingIdx++;
@@ -234,15 +234,14 @@ public class ArrayDeque<T> {
                     break;
                 }
                 leftMovingIdx--;
-                prevleftMovingIdx--;
                 rightMovingIdx++;
+                prevleftMovingIdx--;
                 prevrightMovingIdx++;
                 loopcount++;
             }
             this.nextLstIdx = newNextLstIdx + 1;
             this.nextFstIdx = newNextFstIdx - 1;
         }
-
         this.items = rawAryCopy;
     }
 }
