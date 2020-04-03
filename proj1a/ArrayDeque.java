@@ -173,8 +173,7 @@ public class ArrayDeque<T> {
      * instance method
      * resizing, if needed.
      */
-    private void resizing(double USR) {
-
+    private void resizing(double usageRatio) {
         T[] rawAryCopy = (T[]) new Object[0];
         int leftMovingIdx;
         int rightMovingIdx;
@@ -186,10 +185,10 @@ public class ArrayDeque<T> {
         int newNextFstIdx = 0;
         int newNextLstIdx = 0;
 
-        if (USR >= 0.5) {
+        if (usageRatio >= 0.5) {
             rawAryCopy = (T[]) new Object[this.items.length * 2];
             needEnlarge = true;
-        } else if (USR <= 0.25) {
+        } else if (usageRatio <= 0.25) {
             rawAryCopy = (T[]) new Object[this.items.length / 2];
             needShrink = true;
         }
@@ -202,6 +201,9 @@ public class ArrayDeque<T> {
                 rawAryCopy[leftMovingIdx] = items[prevleftMovingIdx];
                 rawAryCopy[rightMovingIdx] = items[prevrightMovingIdx];
                 leftMovingIdx--;
+                if (prevleftMovingIdx == 0 || prevrightMovingIdx == items.length - 1) {
+                    break;
+                }
                 prevleftMovingIdx--;
                 rightMovingIdx++;
                 prevrightMovingIdx++;
@@ -222,14 +224,17 @@ public class ArrayDeque<T> {
             while (loopcount < this.size) {
                 rawAryCopy[leftMovingIdx] = items[prevleftMovingIdx];
                 rawAryCopy[rightMovingIdx] = items[prevrightMovingIdx];
-                if(rawAryCopy[leftMovingIdx] != null) {
+                if (rawAryCopy[leftMovingIdx] != null) {
                     newNextFstIdx = leftMovingIdx;
+                }
+                if (rawAryCopy[rightMovingIdx] != null) {
+                    newNextLstIdx = rightMovingIdx;
+                }
+                if (leftMovingIdx == 0 || rightMovingIdx == rawAryCopy.length - 1) {
+                    break;
                 }
                 leftMovingIdx--;
                 prevleftMovingIdx--;
-                if(rawAryCopy[rightMovingIdx] != null) {
-                    newNextLstIdx = rightMovingIdx;
-                }
                 rightMovingIdx++;
                 prevrightMovingIdx++;
                 loopcount++;
@@ -237,6 +242,7 @@ public class ArrayDeque<T> {
             this.nextLstIdx = newNextLstIdx + 1;
             this.nextFstIdx = newNextFstIdx - 1;
         }
+
         this.items = rawAryCopy;
     }
 }

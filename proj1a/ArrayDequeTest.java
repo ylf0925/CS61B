@@ -1,10 +1,10 @@
 public class ArrayDequeTest {
     public static void main(String[] args) {
-        ArrayDeque<String> L = new ArrayDeque<>();
+        ArrayDeque<Number> L = new ArrayDeque<>();
         String curr = " ";
         boolean isEmp = L.isEmpty();
         int length = L.size();
-        L.addFirst("1991");
+       /* L.addFirst("1991");
         L.addFirst("1992");
         L.addFirst("1993");
         L.addFirst("2020");
@@ -89,6 +89,19 @@ public class ArrayDequeTest {
         L.addFirst("2007");
         L.addFirst("2006");
         L.addFirst("2005");
-        curr = L.get(4);
+        curr = L.get(4);*/
+        L.addFirst(0);
+        L.removeLast();
+        L.addFirst(2);
+        L.removeLast();
+        L.addLast(4);
+        L.addLast(5);
+        L.addLast(6);
+        L.addFirst(7);
+        L.addLast(8);
+        L.addLast(9);
+        L.removeFirst();
+        L.removeFirst();
+        L.addLast(12);
     }
 }

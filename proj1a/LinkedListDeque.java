@@ -59,7 +59,7 @@ public class LinkedListDeque<T> {
      *
      * @Source youtube
      */
-    public LinkedListDeque(LinkedListDeque other) {
+    /*public LinkedListDeque(LinkedListDeque other) {
         this.sentinel = new TNode(null, null, null);
         this.sentinel.next = sentinel;
         this.sentinel.prev = sentinel;
@@ -68,7 +68,7 @@ public class LinkedListDeque<T> {
         for (int i = 0; i < other.size(); i += 1) {
             addLast((T) other.get(i));
         }
-    }
+    }*/
 
     /**
      * Adds an item of type T to the front of the deque.
