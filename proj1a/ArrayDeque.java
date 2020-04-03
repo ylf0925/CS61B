@@ -1,3 +1,6 @@
+/**
+ * @auther YLF
+ */
 public class ArrayDeque<T> {
 
     /**
@@ -59,11 +62,10 @@ public class ArrayDeque<T> {
      */
     public void printDeque() {
         int countItem = 0;
-        int currIdx = nextFstIdx + 1;
+        int currIdx = circularIdxPlus(nextFstIdx);
         while (countItem < size) {
-            //currIdx = checkCurrIdx(currIdx, this.items.length);
             System.out.println(items[currIdx]);
-            currIdx++;
+            currIdx = circularIdxPlus(currIdx);
             countItem++;
         }
     }
@@ -85,7 +87,6 @@ public class ArrayDeque<T> {
     }
 
     /**
-     * instance method
      * Removes and returns the item at the back of the deque.
      * If no such item exists, returns null.
      */
@@ -102,7 +103,6 @@ public class ArrayDeque<T> {
     }
 
     /**
-     * instance method
      * Get the item at given index.
      */
     public T get(int index) {
@@ -110,6 +110,17 @@ public class ArrayDeque<T> {
             return null;
         }
         return items[circularIdxPlus(nextFstIdx + index)];
+    }
+
+    /**
+     * Creates a deep copy
+     */
+    public ArrayDeque(ArrayDeque other) {
+        this.nextFstIdx = other.nextFstIdx;
+        this.nextLstIdx = other.nextLstIdx;
+        this.size = other.size;
+        items = (T[]) new Object[other.items.length];
+        System.arraycopy(other.items, 0, this.items, 0, other.items.length);
     }
 
 
@@ -124,6 +135,9 @@ public class ArrayDeque<T> {
         return idx - 1;
     }
 
+    /**
+     * return circular moved Idx.
+     */
     private int circularIdxPlus(int idx) {
         if (idx + 1 > items.length - 1) {
             idx = idx + 1 - items.length;
@@ -154,8 +168,8 @@ public class ArrayDeque<T> {
     }
 
     /**
-    * enlarge deque when needed.
-    * */
+     * enlarge deque when needed.
+     */
     private void enlarge() {
         T[] rawArycopy = (T[]) new Object[RESIZEFCT * items.length];
         int headIdx = circularIdxPlus(nextFstIdx); //head of old deque
@@ -174,7 +188,7 @@ public class ArrayDeque<T> {
 
     /**
      * shrink deque when needed.
-     * */
+     */
     private void shrink() {
         T[] rawArycopy = (T[]) new Object[items.length / RESIZEFCT];
         int headIdx = circularIdxPlus(nextFstIdx); //head of old deque

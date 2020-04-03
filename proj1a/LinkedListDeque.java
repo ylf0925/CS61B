@@ -1,3 +1,6 @@
+/**
+ * @auther YLF
+ */
 public class LinkedListDeque<T> {
 
     private TNode sentinel;
@@ -32,7 +35,6 @@ public class LinkedListDeque<T> {
 
     /**
      * create a deep copy of other
-     * @author YLF
      */
     /*public LinkedListDeque(LinkedListDeque<T> other) {
         sentinel = new TNode(null, null, null);
