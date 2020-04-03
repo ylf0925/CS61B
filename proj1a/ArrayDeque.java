@@ -7,32 +7,27 @@ public class ArrayDeque<T> {
     private int nextFstIdx;
     private int nextLstIdx;
     private T[] items;
+    private static final int resizefct = 2;
+
 
     /**
      * Constructor
      */
     public ArrayDeque() {
-        this.size = 0;
-        //Idx 0 is the first node to be operated
+        size = 0;
         nextFstIdx = 3;
         nextLstIdx = 4;
         items = (T[]) new Object[8];
     }
 
     /**
-     * instance method
      * Adds an item of type T to the front of the deque.
      */
     public void addFirst(T item) {
-        if (size == 0) {
-            this.nextFstIdx = 3;
-            this.nextLstIdx = 4;
-        }
-        this.items[nextFstIdx] = item;
+        items[nextFstIdx] = item;
+        nextFstIdx = circularIdxMinus(nextFstIdx);
         size++;
-        this.checkUsageRatio();
-        nextFstIdx--;
-        nextFstIdx = checkCurrIdx(nextFstIdx, this.items.length);
+        checkUsageRatio();
     }
 
     /**
@@ -40,15 +35,10 @@ public class ArrayDeque<T> {
      * Adds an item of type T to the front of the deque.
      */
     public void addLast(T item) {
-        if (size == 0) {
-            this.nextFstIdx = 3;
-            this.nextLstIdx = 4;
-        }
-        this.items[nextLstIdx] = item;
+        items[nextLstIdx] = item;
+        nextLstIdx = circularIdxPlus(nextLstIdx);
         size++;
-        this.checkUsageRatio();
-        nextLstIdx++;
-        nextLstIdx = checkCurrIdx(nextLstIdx, this.items.length);
+        checkUsageRatio();
     }
 
     /**
@@ -66,7 +56,6 @@ public class ArrayDeque<T> {
     public int size() {
         return size;
     }
-
 
     /**
      * instance method
@@ -90,13 +79,11 @@ public class ArrayDeque<T> {
      */
     public T removeFirst() {
         if (size != 0) {
-            nextFstIdx++;
-            nextFstIdx = checkCurrIdx(nextFstIdx, this.items.length);
+            nextFstIdx = circularIdxPlus(nextFstIdx);
             T curr = items[nextFstIdx];
-            //To prevent loitering, null out deleted Items.
             items[nextFstIdx] = null;
             size--;
-            this.checkUsageRatio();
+            checkUsageRatio();
             return curr;
         }
         return null;
@@ -109,13 +96,11 @@ public class ArrayDeque<T> {
      */
     public T removeLast() {
         if (size != 0) {
-            nextLstIdx--;
-            nextLstIdx = checkCurrIdx(nextLstIdx, this.items.length);
+            nextLstIdx = circularIdxMinus(nextLstIdx);
             T curr = items[nextLstIdx];
-            //To prevent loitering, null out deleted Items.
             items[nextLstIdx] = null;
             size--;
-            this.checkUsageRatio();
+            checkUsageRatio();
             return curr;
         }
         return null;
@@ -129,28 +114,30 @@ public class ArrayDeque<T> {
         if ((index > size) || this.isEmpty()) {
             return null;
         }
-        int pos = nextFstIdx;
-        pos++;
-        pos = checkCurrIdx(pos, this.items.length);
-        return items[pos + index];
+        return items[circularIdxPlus(nextFstIdx + index)];
     }
 
+
     /**
-     * function
-     * check current Idx. if out of bound, make it circular.
+     * return circular moved Idx.
      */
-    private int checkCurrIdx(int Idx, int currRawLength) {
-        if (Idx > currRawLength - 1) {
-            Idx = Idx - currRawLength;
+    private int circularIdxMinus(int idx) {
+        if (idx - 1 < 0) {
+            idx = idx - 1 + items.length;
+            return idx;
         }
-        if (Idx < 0) {
-            Idx = Idx + currRawLength;
+        return idx - 1;
+    }
+
+    private int circularIdxPlus(int idx) {
+        if (idx + 1 > items.length - 1) {
+            idx = idx + 1 - items.length;
+            return idx;
         }
-        return Idx;
+        return idx + 1;
     }
 
     /**
-     * instance method
      * check deque usage ratio.
      */
     private void checkUsageRatio() {
@@ -158,89 +145,48 @@ public class ArrayDeque<T> {
         double totalLength = items.length;
         double usageRatio = occupied / totalLength;
         if (items.length >= 16) {
-            if (usageRatio >= 0.5 || usageRatio <= 0.25) {
-                this.resizing(usageRatio);
+            if (usageRatio == 1.0) {
+                this.enlarge();
+            }
+            if (usageRatio <= 0.25) {
+                this.shrink();
             }
         } else if (items.length == 8) {
-            if (usageRatio >= 0.5) {
-                this.resizing(usageRatio);
+            if (usageRatio >= 1.0) {
+                this.enlarge();
             }
         }
     }
 
-    /**
-     * instance method
-     * resizing, if needed.
-     */
-    private void resizing(double usageRatio) {
-        T[] rawAryCopy = (T[]) new Object[0];
-        int leftMovingIdx;
-        int rightMovingIdx;
-        int prevleftMovingIdx;
-        int prevrightMovingIdx;
-        int loopcount = 0;
-        boolean needEnlarge = false;
-        boolean needShrink = false;
-        int newNextFstIdx = 0;
-        int newNextLstIdx = 0;
+    private void enlarge() {
+        T[] rawArycopy = (T[]) new Object[resizefct * items.length];
+        int headIdx = circularIdxPlus(nextFstIdx); //head of old deque
+        int copyCount = 0;
+        int copyIdx = rawArycopy.length / 4;
+        while (copyCount < size) {
+            rawArycopy[copyIdx] = items[headIdx];
+            copyIdx++;
+            headIdx = circularIdxPlus(headIdx);
+            copyCount++;
+        }
+        items = rawArycopy;
+        nextFstIdx = rawArycopy.length / 4 - 1;
+        nextLstIdx = rawArycopy.length - 1 - nextFstIdx;
+    }
 
-        if (usageRatio >= 0.5) {
-            rawAryCopy = (T[]) new Object[this.items.length * 2];
-            needEnlarge = true;
-        } else if (usageRatio <= 0.25) {
-            rawAryCopy = (T[]) new Object[this.items.length / 2];
-            needShrink = true;
+    private void shrink() {
+        T[] rawArycopy = (T[]) new Object[items.length / resizefct];
+        int headIdx = circularIdxPlus(nextFstIdx); //head of old deque
+        int copyCount = 0;
+        int copyIdx = 0;
+        while (copyCount < size) {
+            rawArycopy[copyIdx] = items[headIdx];
+            copyIdx++;
+            headIdx = circularIdxPlus(headIdx);
+            copyCount++;
         }
-        if (needEnlarge) {
-            prevleftMovingIdx = this.items.length / 2 - 1;
-            prevrightMovingIdx = prevleftMovingIdx + 1;
-            leftMovingIdx = rawAryCopy.length / 2 - 1;
-            rightMovingIdx = leftMovingIdx + 1;
-            while (loopcount < this.size) {
-                rawAryCopy[leftMovingIdx] = items[prevleftMovingIdx];
-                rawAryCopy[rightMovingIdx] = items[prevrightMovingIdx];
-                if (prevleftMovingIdx == 0 || prevrightMovingIdx == items.length - 1) {
-                    break;
-                }
-                leftMovingIdx--;
-                prevleftMovingIdx--;
-                rightMovingIdx++;
-                prevrightMovingIdx++;
-                loopcount++;
-            }
-            int rightDelta = this.nextLstIdx - this.items.length / 2;
-            int leftDelta = this.items.length / 2 - 1 - this.nextFstIdx;
-            this.nextLstIdx = rightDelta + rawAryCopy.length / 2;
-            this.nextFstIdx = rawAryCopy.length / 2 - 1 - leftDelta;
-        }
-
-        if (needShrink) {
-            int symmetry = (this.nextLstIdx + this.nextFstIdx) / 2;
-            leftMovingIdx = rawAryCopy.length / 2 - 1;
-            rightMovingIdx = leftMovingIdx + 1;
-            prevleftMovingIdx = symmetry;
-            prevrightMovingIdx = symmetry + 1;
-            while (loopcount < this.size) {
-                rawAryCopy[leftMovingIdx] = items[prevleftMovingIdx];
-                rawAryCopy[rightMovingIdx] = items[prevrightMovingIdx];
-                if (rawAryCopy[leftMovingIdx] != null) {
-                    newNextFstIdx = leftMovingIdx;
-                }
-                if (rawAryCopy[rightMovingIdx] != null) {
-                    newNextLstIdx = rightMovingIdx;
-                }
-                if (leftMovingIdx == 0 || rightMovingIdx == rawAryCopy.length - 1) {
-                    break;
-                }
-                leftMovingIdx--;
-                rightMovingIdx++;
-                prevleftMovingIdx--;
-                prevrightMovingIdx++;
-                loopcount++;
-            }
-            this.nextLstIdx = newNextLstIdx + 1;
-            this.nextFstIdx = newNextFstIdx - 1;
-        }
-        this.items = rawAryCopy;
+        items = rawArycopy;
+        nextFstIdx = rawArycopy.length - 1;
+        nextLstIdx = size;
     }
 }
