@@ -29,10 +29,10 @@ public class ArrayDeque<T> {
             this.nextLstIdx = 4;
         }
         this.items[nextFstIdx] = item;
-        nextFstIdx--;
-        //nextFstIdx = checkCurrIdx(nextFstIdx, this.items.length);
         size++;
         this.checkUsageRatio();
+        nextFstIdx--;
+        //nextFstIdx = checkCurrIdx(nextFstIdx, this.items.length);
     }
 
     /**
@@ -45,10 +45,10 @@ public class ArrayDeque<T> {
             this.nextLstIdx = 4;
         }
         this.items[nextLstIdx] = item;
-        nextLstIdx++;
-        //nextLstIdx = checkCurrIdx(nextLstIdx, this.items.length);
         size++;
         this.checkUsageRatio();
+        nextLstIdx++;
+        //nextLstIdx = checkCurrIdx(nextLstIdx, this.items.length);
 
     }
 
