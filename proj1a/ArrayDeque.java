@@ -32,7 +32,7 @@ public class ArrayDeque<T> {
         size++;
         this.checkUsageRatio();
         nextFstIdx--;
-        //nextFstIdx = checkCurrIdx(nextFstIdx, this.items.length);
+        nextFstIdx = checkCurrIdx(nextFstIdx, this.items.length);
     }
 
     /**
@@ -48,8 +48,7 @@ public class ArrayDeque<T> {
         size++;
         this.checkUsageRatio();
         nextLstIdx++;
-        //nextLstIdx = checkCurrIdx(nextLstIdx, this.items.length);
-
+        nextLstIdx = checkCurrIdx(nextLstIdx, this.items.length);
     }
 
     /**
@@ -92,7 +91,7 @@ public class ArrayDeque<T> {
     public T removeFirst() {
         if (size != 0) {
             nextFstIdx++;
-            //nextFstIdx = checkCurrIdx(nextFstIdx, this.items.length);
+            nextFstIdx = checkCurrIdx(nextFstIdx, this.items.length);
             T curr = items[nextFstIdx];
             //To prevent loitering, null out deleted Items.
             items[nextFstIdx] = null;
@@ -111,7 +110,7 @@ public class ArrayDeque<T> {
     public T removeLast() {
         if (size != 0) {
             nextLstIdx--;
-            //nextLstIdx = checkCurrIdx(nextLstIdx, this.items.length);
+            nextLstIdx = checkCurrIdx(nextLstIdx, this.items.length);
             T curr = items[nextLstIdx];
             //To prevent loitering, null out deleted Items.
             items[nextLstIdx] = null;
@@ -132,7 +131,7 @@ public class ArrayDeque<T> {
         }
         int pos = nextFstIdx;
         pos++;
-        //pos = checkCurrIdx(pos, this.items.length);
+        pos = checkCurrIdx(pos, this.items.length);
         return items[pos + index];
     }
 
@@ -140,7 +139,7 @@ public class ArrayDeque<T> {
      * function
      * check current Idx. if out of bound, make it circular.
      */
-   /* private int checkCurrIdx(int Idx, int currRawLength) {
+    private int checkCurrIdx(int Idx, int currRawLength) {
         if (Idx > currRawLength - 1) {
             Idx = Idx - currRawLength;
         }
@@ -148,7 +147,7 @@ public class ArrayDeque<T> {
             Idx = Idx + currRawLength;
         }
         return Idx;
-    }*/
+    }
 
     /**
      * instance method
