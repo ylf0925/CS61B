@@ -7,7 +7,7 @@ public class ArrayDeque<T> {
     private int nextFstIdx;
     private int nextLstIdx;
     private T[] items;
-    private static final int resizefct = 2;
+    private static final int RESIZEFCT = 2;
 
 
     /**
@@ -31,7 +31,6 @@ public class ArrayDeque<T> {
     }
 
     /**
-     * instance method
      * Adds an item of type T to the front of the deque.
      */
     public void addLast(T item) {
@@ -42,7 +41,6 @@ public class ArrayDeque<T> {
     }
 
     /**
-     * instance method
      * check if deque is empty;
      */
     public boolean isEmpty() {
@@ -50,7 +48,6 @@ public class ArrayDeque<T> {
     }
 
     /**
-     * instance method
      * get deque size;
      */
     public int size() {
@@ -58,7 +55,6 @@ public class ArrayDeque<T> {
     }
 
     /**
-     * instance method
      * print the items in the deque from first to last, separated by a space.
      */
     public void printDeque() {
@@ -73,7 +69,6 @@ public class ArrayDeque<T> {
     }
 
     /**
-     * instance method
      * Removes and returns the item at the front of the deque.
      * If no such item exists, returns null.
      */
@@ -158,8 +153,11 @@ public class ArrayDeque<T> {
         }
     }
 
+    /**
+    * enlarge deque when needed.
+    * */
     private void enlarge() {
-        T[] rawArycopy = (T[]) new Object[resizefct * items.length];
+        T[] rawArycopy = (T[]) new Object[RESIZEFCT * items.length];
         int headIdx = circularIdxPlus(nextFstIdx); //head of old deque
         int copyCount = 0;
         int copyIdx = rawArycopy.length / 4;
@@ -174,8 +172,11 @@ public class ArrayDeque<T> {
         nextLstIdx = rawArycopy.length - 1 - nextFstIdx;
     }
 
+    /**
+     * shrink deque when needed.
+     * */
     private void shrink() {
-        T[] rawArycopy = (T[]) new Object[items.length / resizefct];
+        T[] rawArycopy = (T[]) new Object[items.length / RESIZEFCT];
         int headIdx = circularIdxPlus(nextFstIdx); //head of old deque
         int copyCount = 0;
         int copyIdx = 0;
