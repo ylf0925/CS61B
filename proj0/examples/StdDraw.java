@@ -455,13 +455,13 @@ import javax.swing.KeyStroke;
  *  <ul>
  *  <li> The {@code picture()} methods may not draw the portion of the image that is
  *       inside the canvas if the center point (<em>x</em>, <em>y</em>) is outside the
- *  *       canvas.
- *  *       This bug appears only on some systems.
- *  *  <li> Some methods may not draw the portion of the geometric object that is inside the
- *  *       canvas if the <em>x</em>- or <em>y</em>-coordinates are infinite.
- *  *       This bug appears only on some systems.
- *  *  </ul>
- *  *  <p>
+ *       canvas.
+ *       This bug appears only on some systems.
+ *  <li> Some methods may not draw the portion of the geometric object that is inside the
+ *       canvas if the <em>x</em>- or <em>y</em>-coordinates are infinite.
+ *       This bug appears only on some systems.
+ *  </ul>
+ *  <p>
  *  <b>Reference.</b>
  *  For additional documentation,
  *  see <a href="https://introcs.cs.princeton.edu/15inout">Section 1.5</a> of

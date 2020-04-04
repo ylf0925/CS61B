@@ -5,7 +5,7 @@ import java.util.Formatter;
  * with a large number of additional methods.
  *
  * @author P. N. Hilfinger, with some modifications by Josh Hug and melaniecebula
- * [Do not modify this file.]
+ *         [Do not modify this file.]
  */
 public class IntList {
     /**
@@ -29,7 +29,7 @@ public class IntList {
      * A List with null rest, and first = 0.
      */
     public IntList() {
-        /* NOTE: public IntList () { }  would also work. */
+    /* NOTE: public IntList () { }  would also work. */
         this(0, null);
     }
 
@@ -81,48 +81,32 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-        if (A != null) {
-            IntList head = A;
-            while (A.rest != null) {
-                A = A.rest;
-            }
-            A.rest = B;
-            return head;
-        }
-        return B;
+        //TODO:  fill in method
+        return null;
     }
-
-    /*
-    public static IntList datenate(IntList A, IntList B) {
-        IntList head = A;
-        helper(A, B);
-        return head;
-    }
-
-    public static void helper(IntList N1, IntList N2) {
-        if (N1.rest == null) {
-            N1.rest = N2;
-            return ;
-        }
-        helper(N1.rest, N2);
-    }*/
 
     /**
      * Returns a list consisting of the elements of A followed by the
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
     public static IntList catenate(IntList A, IntList B) {
-        IntList NewHead = new IntList(-1, null);
-        IntList slow = NewHead;
-        IntList fast = A;
-        while (fast != null) {
-            slow.rest = new IntList(fast.first, null);
-            fast = fast.rest;
-            slow = slow.rest;
-        }
-        slow.rest = B;
-        return NewHead.rest;
+        //TODO:  fill in method
+        return null;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     /**
