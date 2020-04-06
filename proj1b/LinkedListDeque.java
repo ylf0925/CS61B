@@ -189,6 +189,7 @@ public class LinkedListDeque<T> implements Deque<T> {
     /**
      * Get the item at given index recursively
      */
+
     public T getRecursive(int index) {
         if (this.size == 0) {
             return null;

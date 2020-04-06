@@ -9,12 +9,25 @@ public class Palindrome {
 
     public boolean isPalindrome(String word) {
         Deque<Character> d = wordToDeque(word);
-        if (d.size() == 0 || d.size() == 1){
+        if (d.size() == 0 || d.size() == 1) {
             return true;
         }
         //deque size >=2
-        while (d.size()>1) {
-            if (d.removeLast() != d.removeFirst()){
+        while (d.size() > 1) {
+            if (d.removeLast() != d.removeFirst()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isPalindrome(String word, CharacterComparator cc) {
+        Deque<Character> d = wordToDeque(word);
+        if (d.size() == 0 || d.size() == 1) {
+            return true;
+        }
+        while (d.size() > 1) {
+            if (!cc.equalChars(d.removeLast(), d.removeFirst())) {
                 return false;
             }
         }
