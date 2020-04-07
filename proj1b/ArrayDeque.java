@@ -1,7 +1,7 @@
 /**
  * @auther YLF
  */
-public class ArrayDeque<T> implements Deque<T>{
+public class ArrayDeque<T> implements Deque<T> {
 
     /**
      * Instance variables

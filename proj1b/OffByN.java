@@ -1,6 +1,7 @@
 public class OffByN implements CharacterComparator {
     //instance variable
     private int diff;
+
     //Constructor
     public OffByN(int N) {
         diff = N;
@@ -8,7 +9,11 @@ public class OffByN implements CharacterComparator {
 
     @Override
     public boolean equalChars(char x, char y) {
-        return x - y == diff || y - x == diff;
+        if (Math.abs(x - y) == diff) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
