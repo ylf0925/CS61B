@@ -8,7 +8,7 @@ public class PalindromeFinder {
         OffByOne byOne = new OffByOne();
         while (!in.isEmpty()) {
             String word = in.readString();
-            if (word.length() >= minLength && palindrome.isPalindrome(word,byOne)) {
+            if (word.length() >= minLength && palindrome.isPalindrome(word, byOne)) {
                 System.out.println(word);
             }
         }
