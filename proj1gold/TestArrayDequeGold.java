@@ -12,6 +12,7 @@ public class TestArrayDequeGold {
          * */
         StudentArrayDeque<Integer> testArrayDeque = new StudentArrayDeque<>();
         ArrayDequeSolution<Integer> correctArrayDeque = new ArrayDequeSolution<>();
+        StringBuilder errorMsg = new StringBuilder("");
 
         //random call to addFirst / addLast
         for (int i = 0; i < 200; i += 1) {
@@ -20,34 +21,34 @@ public class TestArrayDequeGold {
             if (decider < 0.5) {
                 testArrayDeque.addLast(randomNum);
                 correctArrayDeque.addLast(randomNum);
+                errorMsg.append("addLast(").append(randomNum).append(")").append("\n");
+                Integer testCurr = testArrayDeque.get(i);
+                Integer correctCurr = correctArrayDeque.get(i);
+                assertEquals(errorMsg.toString(),testCurr,correctCurr);
             } else {
                 testArrayDeque.addFirst(randomNum);
                 correctArrayDeque.addFirst(randomNum);
+                errorMsg.append("addFirst(").append(randomNum).append(")").append("\n");
+                Integer testCurr = testArrayDeque.get(i);
+                Integer correctCurr = correctArrayDeque.get(i);
+                assertEquals(errorMsg.toString(),testCurr,correctCurr);
             }
         }
 
-        //validation
-        for (int i = 0; i < 200; i += 1) {
-            Integer actual = testArrayDeque.get(i);
-            Integer expected = correctArrayDeque.get(i);
-            assertEquals("Oh noooo!\nThis is bad:\n   Random number " + actual
-                    + " not equal to " + expected + "!", actual, expected);
-        }
-        //if passed, continue testing
 
-        //random call removeFst / removeLst and validate each
+        //random call removeFst / removeLst
         for (int i = 0; i < 200; i += 1) {
             double decider = StdRandom.uniform();
             if (decider < 0.5) {
                 Integer actual = testArrayDeque.removeFirst();
                 Integer expected = correctArrayDeque.removeFirst();
-                assertEquals("Oh noooo!\nThis is bad:\n   Random number " + actual
-                     + " not equal to " + expected + "!", actual, expected);
+                errorMsg.append("removeFirst()").append("\n");
+                assertEquals(errorMsg.toString(),actual,expected);
             } else {
                 Integer actual = testArrayDeque.removeLast();
                 Integer expected = correctArrayDeque.removeLast();
-                assertEquals("Oh noooo!\nThis is bad:\n   Random number " + actual
-                     + " not equal to " + expected + "!", actual, expected);
+                errorMsg.append("removeLast()").append("\n");
+                assertEquals(errorMsg.toString(),actual,expected);
             }
         }
 
