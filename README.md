@@ -7,3 +7,6 @@ Instructor: Josh Hug
 
 ## proj0
 To make autograde(18sp open to public) well functional, you _MUST_ rename *Body.java* to *Planet.java*.
+
+## Lab5
+Do not set energy to zero if clorus has negative energy.  LET IT DIE.
