@@ -10,3 +10,4 @@ To make autograde(18sp open to public) well functional, you _MUST_ rename *Body.
 
 ## Lab5
 Do not set energy to zero if clorus has negative energy.  LET IT DIE.
+Also, uncomment line 135 to 137 to correctly generate clorus!
