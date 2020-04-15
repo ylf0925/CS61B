@@ -2,7 +2,7 @@ package synthesizer;
 
 import java.util.Iterator;
 
-public class ArrayRingBuffer<T> implements BoundedQueue<T> {
+public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>  {
 
     /* Index for the next dequeue or peek. */
     private int first;
@@ -72,6 +72,9 @@ public class ArrayRingBuffer<T> implements BoundedQueue<T> {
         fillCount--;
         return curr;
     }
+
+
+
 
     /**
      * Return oldest item, but don't remove it. If the buffer is empty, then
