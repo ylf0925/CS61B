@@ -13,6 +13,15 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     /* Array for storing the buffer data. */
     private T[] rb;
 
+    @Override
+    public int capacity() {
+        return rb.length;
+    }
+
+    @Override
+    public int fillCount() {
+        return fillCount;
+    }
 
     private int circularPlus(int idx) {
         if (idx + 1 > rb.length - 1) {
@@ -77,8 +86,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     }
 
     /**
-     * equals API is required in sp19 autograder, NOT sp18
-     *
+     * equals API is required in sp19 autograder.
      * @Override
      */
     /*public boolean equals(Object o) {
