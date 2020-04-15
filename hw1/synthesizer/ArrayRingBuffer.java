@@ -13,7 +13,15 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     /* Array for storing the buffer data. */
     private T[] rb;
 
+    @Override
+    public int capacity() {
+        return rb.length;
+    }
 
+    @Override
+    public int fillCount() {
+        return fillCount;
+    }
 
     private int circularPlus(int idx) {
         if (idx + 1 > rb.length - 1) {
@@ -78,7 +86,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     }
 
 
-    /*
+    @Override
     public boolean equals(Object o) {
         if (o == null) {
             return false;
@@ -101,7 +109,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
             }
         }
         return true;
-    }*/
+    }
 
     @Override
     public Iterator<T> iterator() {
@@ -132,5 +140,4 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
         }
     }
 }
-
 
