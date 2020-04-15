@@ -85,11 +85,9 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
         return rb[first];
     }
 
-    /**
-     * equals API is required in sp19 autograder.
-     * @Override
-     */
-    /*public boolean equals(Object o) {
+
+    @Override
+    public boolean equals(Object o) {
         if (o == null) {
             return false;
         }
@@ -111,7 +109,8 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
             }
         }
         return true;
-    }*/
+    }
+
     @Override
     public Iterator<T> iterator() {
         return new AryBufferIterator();
