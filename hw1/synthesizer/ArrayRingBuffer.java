@@ -86,7 +86,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     }
 
 
-    @Override
+   /* @Override
     public boolean equals(Object o) {
         if (o == null) {
             return false;
@@ -109,7 +109,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
             }
         }
         return true;
-    }
+    }*/
 
     @Override
     public Iterator<T> iterator() {
