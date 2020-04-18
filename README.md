@@ -14,8 +14,9 @@ Also, uncomment line 135 to 137 to correctly generate clorus!
 **In sp18 this lab is adjusted to lab15, autograder still not working even if you uploaded it to lab15.**
 
 ## HW1
-If you accidentally use keyword **Objects** when instantiate new generic array,   you got a  _java.lang.ArrayStoreException_ error, which can be quite annoyning.
+If you accidentally use keyword **Objects** when instantiate new generic array,   you got a  _java.lang.ArrayStoreException_ error, which can be quite annoying.
 This is **WRONG**:
+
 ```java
 gAry = (T[ ]) new Objects[capacity]
 ```

@@ -24,14 +24,14 @@ public class TestArrayDequeGold {
                 errorMsg.append("addLast(").append(randomNum).append(")").append("\n");
                 Integer testCurr = testArrayDeque.get(i);
                 Integer correctCurr = correctArrayDeque.get(i);
-                assertEquals(errorMsg.toString(),testCurr,correctCurr);
+                assertEquals(errorMsg.toString(), testCurr, correctCurr);
             } else {
                 testArrayDeque.addFirst(randomNum);
                 correctArrayDeque.addFirst(randomNum);
                 errorMsg.append("addFirst(").append(randomNum).append(")").append("\n");
                 Integer testCurr = testArrayDeque.get(i);
                 Integer correctCurr = correctArrayDeque.get(i);
-                assertEquals(errorMsg.toString(),testCurr,correctCurr);
+                assertEquals(errorMsg.toString(), testCurr, correctCurr);
             }
         }
 
@@ -43,12 +43,12 @@ public class TestArrayDequeGold {
                 Integer actual = testArrayDeque.removeFirst();
                 Integer expected = correctArrayDeque.removeFirst();
                 errorMsg.append("removeFirst()").append("\n");
-                assertEquals(errorMsg.toString(),actual,expected);
+                assertEquals(errorMsg.toString(), actual, expected);
             } else {
                 Integer actual = testArrayDeque.removeLast();
                 Integer expected = correctArrayDeque.removeLast();
                 errorMsg.append("removeLast()").append("\n");
-                assertEquals(errorMsg.toString(),actual,expected);
+                assertEquals(errorMsg.toString(), actual, expected);
             }
         }
 
