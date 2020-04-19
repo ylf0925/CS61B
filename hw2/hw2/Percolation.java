@@ -28,7 +28,7 @@ public class Percolation {
     }
 
     // convert 2D to 1D
-    public int xyTo1D(int row, int col) {
+    private int xyTo1D(int row, int col) {
         return dimension * row + col + 1;
     }
 
