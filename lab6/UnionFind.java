@@ -1,5 +1,4 @@
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class UnionFind {
@@ -48,10 +47,10 @@ public class UnionFind {
         return find(v1) == find(v2);
     }
 
-    /* Connects two elements v1 and v2 together. v1 and v2 can be any valid 
+    /* Connects two elements v1 and v2 together. v1 and v2 can be any valid
        elements, and a union-by-size heuristic is used. If the sizes of the sets
-       are equal, tie break by connecting v1's root to v2's root. Unioning a 
-       vertex with itself or vertices that are already connected should not 
+       are equal, tie break by connecting v1's root to v2's root. Unioning a
+       vertex with itself or vertices that are already connected should not
        change the sets but may alter the internal structure of the data. */
     public void union(int v1, int v2) {
         validate(v1);
@@ -65,10 +64,10 @@ public class UnionFind {
 
         if (size1 >= size2) {
             pmap[root2] = root1;
-            pmap[root1] = -(size1+size2);
+            pmap[root1] = -(size1 + size2);
         } else {
             pmap[root1] = root2;
-            pmap[root2] = -(size1+size2);
+            pmap[root2] = -(size1 + size2);
         }
 
     }
@@ -77,19 +76,17 @@ public class UnionFind {
        allowing for fast search-time. */
     public int find(int vertex) {
         validate(vertex);
-        int curr = vertex;
-        int hangSize = 0;
-        List<Integer> stack = new LinkedList<Integer>();
-        while (pmap[curr] >= 0) {
-            stack.add(curr);
-            curr = pmap[curr];
-            hangSize++;
+        int root = vertex;
+        while (parent(root) >= 0) {
+            root = parent(root);
         }
-        while (!stack.isEmpty()) {
-            int hanger = stack.remove(stack.size() - 1);
-            pmap[hanger] = curr;
+        int curr;
+        while (vertex != root) {
+            curr = parent(vertex);
+            pmap[vertex] = root;
+            vertex = curr;
         }
-        return curr;
+        return root;
     }
 }
 
