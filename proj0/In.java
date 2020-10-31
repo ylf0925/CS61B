@@ -104,8 +104,9 @@ public final class In {
         try {
             URLConnection site = url.openConnection();
             InputStream is     = site.getInputStream();
-            scanner            = new Scanner(new BufferedInputStream(is), CHARSET_NAME);
+            scanner          = new Scanner(new BufferedInputStream(is), CHARSET_NAME);
             scanner.useLocale(LOCALE);
+
         }
         catch (IOException ioe) {
             System.err.println("Could not open " + url);

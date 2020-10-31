@@ -1,8 +1,4 @@
-
-import java.util.List;
-
 public class UnionFind {
-    // TODO - Add instance variables?
     private int[] pmap;
 
     /* Creates a UnionFind data structure holding n vertices. Initially, all
@@ -55,7 +51,6 @@ public class UnionFind {
     public void union(int v1, int v2) {
         validate(v1);
         validate(v2);
-        // TODO
         int root1 = find(v1);
         int root2 = find(v2);
 

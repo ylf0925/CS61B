@@ -12,7 +12,7 @@ public class LinkedListDeque<T> implements Deque<T> {
     private class TNode {
         private TNode prev;
         private TNode next;
-        private T item;
+        private final T item;
 
         TNode(TNode p, T content, TNode n) {
             prev = p;
@@ -36,7 +36,6 @@ public class LinkedListDeque<T> implements Deque<T> {
     /**
      * create a deep copy of other
      */
-
     public LinkedListDeque(LinkedListDeque<T> other) {
         sentinel = new TNode(null, null, null);
         sentinel.next = sentinel;

@@ -23,7 +23,6 @@ public class TestPercolation {
         assertFalse(p.isFull(2, 0));
     }
 
-
 }
 
 

@@ -2,7 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79413741-2669-4cc8-8e2e-ef95b69a8aa4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab/clab6/BubbleGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab/clab6/BubbleGrid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clab/clab6/UnionFind.java" beforeDir="false" afterPath="$PROJECT_DIR$/../clab/clab6/UnionFind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw1/synthesizer/ArrayRingBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw1/synthesizer/ArrayRingBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/hw2/TestPercolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/hw2/TestPercolation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/out/production/hw2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/out/production/hw2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/out/production/hw2/hw2/InteractivePercolationVisualizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/out/production/hw2/hw2/InteractivePercolationVisualizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/out/production/hw2/hw2/Percolation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/out/production/hw2/hw2/Percolation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/out/production/hw2/hw2/PercolationFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/out/production/hw2/hw2/PercolationFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/out/production/hw2/hw2/PercolationStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/out/production/hw2/hw2/PercolationStats.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/out/production/hw2/hw2/PercolationVisualizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/out/production/hw2/hw2/PercolationVisualizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hw2/out/production/hw2/hw2/TestPercolation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../hw2/out/production/hw2/hw2/TestPercolation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/huglife/HugLife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/creatures/Clorus.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/creatures/Clorus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/creatures/Plip.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/creatures/Plip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/creatures/TestClorus.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/creatures/TestClorus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/creatures/TestPlip.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/creatures/TestPlip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Action$ActionType.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Action$ActionType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Action.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Creature.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Creature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Direction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Empty.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Empty.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/HugLife.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/HugLife.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/HugLifeAnimator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/HugLifeAnimator$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/HugLifeAnimator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/HugLifeAnimator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/HugLifeUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/HugLifeUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Impassible.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Impassible.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/In.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/In.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Occupant.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Occupant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Out.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Out.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/Position.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/SampleCreature.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/SampleCreature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/StdDraw.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/StdDraw.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/TestHugLife.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/out/production/lab5/huglife/TestHugLife.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6/UnionFind.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6/UnionFind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6/out/production/lab6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6/out/production/lab6/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6/out/production/lab6/META-INF/lab6.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6/out/production/lab6/TestUnionFind.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6/out/production/lab6/TestUnionFind.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6/out/production/lab6/UnionFind.class" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6/out/production/lab6/UnionFind.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/out/production/proj0/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/out/production/proj0/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj0/out/production/proj0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../proj0/out/production/proj0/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj1b/LinkedListDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/LinkedListDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../supplymentary material/disc06sol.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../supplymentary material/disc06sol.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,12 +65,12 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../CS61B/skeleton/skeleton-sp19/proj0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hw2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager" selected="JUnit.IntListTest.testCatenate">
@@ -93,86 +142,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="97" y="100" width="1617" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584983062783">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-3099" y="275" key="FileChooserDialogImpl" timestamp="1596207870388">
+      <screen x="-3840" y="0" width="1920" height="1060" />
     </state>
-    <state x="97" y="100" width="1617" height="840" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584983062783" />
-    <state x="249" y="223" key="#xdebugger.evaluate" timestamp="1584981207051">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="249" y="223" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1584981207051" />
-    <state x="267" y="275" key="FileChooserDialogImpl" timestamp="1585069499105">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="267" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585069499105" />
-    <state width="915" height="345" key="GridCell.Tab.-1.bottom" timestamp="1584969710796">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="915" height="345" key="GridCell.Tab.-1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584969710796" />
-    <state width="915" height="345" key="GridCell.Tab.-1.center" timestamp="1584969710796">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="915" height="345" key="GridCell.Tab.-1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584969710796" />
-    <state width="915" height="345" key="GridCell.Tab.-1.left" timestamp="1584969710796">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="915" height="345" key="GridCell.Tab.-1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584969710796" />
-    <state width="915" height="345" key="GridCell.Tab.-1.right" timestamp="1584969710796">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="915" height="345" key="GridCell.Tab.-1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584969710796" />
-    <state width="1031" height="365" key="GridCell.Tab.0.bottom" timestamp="1585034132712">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1031" height="365" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585034132712" />
-    <state width="1031" height="365" key="GridCell.Tab.0.center" timestamp="1585034132712">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1031" height="365" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585034132712" />
-    <state width="1031" height="365" key="GridCell.Tab.0.left" timestamp="1585034132712">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1031" height="365" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585034132712" />
-    <state width="1031" height="365" key="GridCell.Tab.0.right" timestamp="1585034132712">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1031" height="365" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585034132712" />
-    <state width="1031" height="365" key="GridCell.Tab.1.bottom" timestamp="1585034132712">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1031" height="365" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585034132712" />
-    <state width="1031" height="365" key="GridCell.Tab.1.center" timestamp="1585034132712">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1031" height="365" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585034132712" />
-    <state width="1031" height="365" key="GridCell.Tab.1.left" timestamp="1585034132712">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1031" height="365" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585034132712" />
-    <state width="1031" height="365" key="GridCell.Tab.1.right" timestamp="1585034132712">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1031" height="365" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585034132712" />
-    <state width="915" height="345" key="GridCell.Tab.2.bottom" timestamp="1584969708086">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="915" height="345" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584969708086" />
-    <state width="915" height="345" key="GridCell.Tab.2.center" timestamp="1584969708086">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="915" height="345" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584969708086" />
-    <state width="915" height="345" key="GridCell.Tab.2.left" timestamp="1584969708086">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="915" height="345" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584969708086" />
-    <state width="915" height="345" key="GridCell.Tab.2.right" timestamp="1584969708086">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="915" height="345" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584969708086" />
-    <state x="152" y="69" width="1166" height="843" key="SettingsEditor" timestamp="1584984795606">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="152" y="69" width="1166" height="843" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584984795606" />
+    <state x="-3099" y="275" key="FileChooserDialogImpl/-3840.0.1920.1060/0.0.1920.1040@-3840.0.1920.1060" timestamp="1596207870388" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
